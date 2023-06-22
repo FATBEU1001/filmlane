@@ -20,13 +20,56 @@ function renderHeader() {
         </ul>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search for a movie, tv show" />
+        <input type="text" placeholder="Search for a movie" />
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     <div class="icon"><i class="fa-solid fa-bars-staggered"></i></div>
 </div>`;
 }
 renderHeader();
+
+//RENDER footer
+function renderFooter() {
+    const footer = document.querySelector(".footer-box");
+    footer.innerHTML = `<div class="footer">
+    <div class="container">
+        <div class="text align-item">
+            <div class="top-left">
+                <h2>TRIAL START FIRST 30 DAYS.</h2>
+                <p>Enter your email to create or restart your membership.</p>
+            </div>
+            <div class="top-right">
+                <input type="text" placeholder="Enter your email" />
+                <button>GET STARTED</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-last">
+    <div class="container">
+        <div class="menu align-item">
+            <img src="img/logo.svg" alt="" />
+            <ul class="menu-footer align-item">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="list-movie.html?type=movie">MOVIES</a></li>
+                <li><a href="list-movie.html?type=tvShow">TV SHOWS</a></li>
+                <li><a href="people.html?page=1">PEOPLE</a></li>
+                <li><a href="">GENRE</a></li>
+            </ul>
+        </div>
+        <div class="body-footer align-item">
+            <p class="coder">© 2023 <span class="coder-color">Filmlane</span>.All Rights Reserved by <span class="coder-color">Tan Phat</span></p>
+            <div class="social">
+                <a href=""><i class="fa-brands fa-facebook"></i> </a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>`;
+}
+renderFooter();
 //XỬ LÝ DOM
 window.addEventListener("scroll", function () {
     var header = document.querySelector(".header");
@@ -50,7 +93,7 @@ genreLi.addEventListener("click", function () {
 //Ham render danh sach movie
 function renderListmovie(dataResult, boxResult) {
     dataResult.forEach((element) => {
-        boxResult.innerHTML += ` <a href="detail.html?id=${element.id}" class="cardmovie">
+        boxResult.innerHTML += ` <a href="detail.html?id=${element.id}&type=${element.original_title ? "movie" : "tv"}" class="cardmovie">
         <div class="thumb">
             <img src=" https://image.tmdb.org/t/p/w300${element.poster_path}" alt="" />
         </div>
