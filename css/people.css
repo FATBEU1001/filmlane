@@ -1,0 +1,100 @@
+.listPeople {
+    padding-top: 50px;
+    background-image: url(../img/upcoming-bg.png);
+    color: #fff;
+}
+.listPeople .list {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+}
+.listPeople .list .actor {
+    width: calc(20% - 20px);
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+}
+.listPeople .list .actor::before {
+    content: "";
+    position: absolute;
+    height: 84.5%;
+    width: 100%;
+    background-color: rgb(255 255 255 / 16%);
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.listPeople .list .actor:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.listPeople .list .actor img {
+    border-radius: 10px;
+}
+.listPeople .list .actor h1 {
+    font-size: 20px;
+    margin: 6px 0;
+}
+.listPeople .list .actor .popularity {
+    font-size: 12px;
+}
+.listPeople .list .actor .popularity i {
+    color: var(--primarycolor);
+}
+@media (max-width: 991px) {
+    .listPeople .list .actor h1 {
+        font-size: 16px;
+    }
+    .listPeople .list .actor .popularity {
+        font-size: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .listPeople .list .actor {
+        min-width: 22%;
+    }
+    .listPeople .list .actor h1 {
+        font-size: 12px;
+    }
+    .listPeople .list .actor .popularity {
+        font-size: 10px;
+    }
+}
+@media (max-width: 575px) {
+    .listPeople {
+        padding: 20px 0;
+    }
+    .listPeople .list .actor {
+        min-width: 30%;
+    }
+    .actor h3 {
+        font-size: 12px;
+    }
+    .actor .day {
+        font-size: 10px;
+    }
+    .actor .rate {
+        font-size: 10px;
+    }
+    .listPeople .list {
+        padding-bottom: 0;
+    }
+    .listPeople .title {
+        padding: 15px 0 30px;
+    }
+}
+@media (max-width: 479px) {
+    .listPeople .list .actor {
+        min-width: 47%;
+    }
+}
+@media (max-width: 390px) {
+    .listPeople .list .actor {
+        min-width: 46%;
+    }
+}
