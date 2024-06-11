@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Filmlane</title>
         <link rel="shortcut icon" href="img/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link
             rel="stylesheet"
@@ -23,13 +25,15 @@
                 <a class="banner-watch" href="list-movie.html?type=movie"><i class="fa-solid fa-play"></i> WATCH NOW</a>
             </div>
         </div>
+
         <div class="listmovie" style="background-image: url(img/nowplaying-bg.png)">
             <div class="container">
                 <div class="title">
                     <h3>ONLINE STREAMING</h3>
                     <h1>Now playing Movies</h1>
                 </div>
-                <div class="list scroll" id="nowplay"></div>
+                <!-- <div class="list scroll"></div> -->
+                <div class="listmovie-slide" id="nowplay"></div>
             </div>
         </div>
         <div class="listmovie" style="background-image: url(img/upcoming-bg.jpeg)">
@@ -38,7 +42,7 @@
                     <h3>ONLINE STREAMING</h3>
                     <h1>Upcoming movie</h1>
                 </div>
-                <div class="list scroll" id="upcoming"></div>
+                <div class="listmovie-slide" id="upcoming"></div>
             </div>
         </div>
         <div class="listmovie" style="background-image: url(img/top-rated-bg.jpeg)">
@@ -47,7 +51,7 @@
                     <h3>ONLINE STREAMING</h3>
                     <h1>Top Rated Movies</h1>
                 </div>
-                <div class="list scroll" id="toprated"></div>
+                <div class="listmovie-slide" id="toprated"></div>
             </div>
         </div>
         <div class="listmovie" style="background-image: url(img/tv-series-bg.jpeg)">
@@ -56,12 +60,14 @@
                     <h3>ONLINE STREAMING</h3>
                     <h1>World Best TV Series</h1>
                 </div>
-                <div class="list scroll" id="tvseries"></div>
+                <div class="listmovie-slide" id="tvseries"></div>
             </div>
         </div>
 
         <div class="footer-box"></div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="js/style.js"></script>
         <script src="js/home.js"></script>
     </body>

@@ -70,6 +70,32 @@ function renderFooter() {
 </div>`;
 }
 renderFooter();
+
+//Fetch data form URL()
+async function getData(url) {
+    let promise = await fetch(url);
+    let data = await promise.json();
+    return data;
+}
+
+function renderListmovie(dataResult, boxResult) {
+    dataResult.results.forEach((element) => {
+        boxResult.innerHTML += `<a href="detail.html?id=${element.id}&type=${element.original_title ? "movie" : "tv"}" class="cardmovie">
+        <div class="thumb">
+            <img src=" https://image.tmdb.org/t/p/w300${element.poster_path}" alt="" />
+        </div>
+        <h3>${element.original_title ? element.original_title : element.original_name}</h3>
+        <div class="number align-item">
+            <p class="day">${element.release_date ? element.release_date : element.first_air_date}</p>
+            <p class="rate">
+                <i class="fa-solid fa-star"></i>
+                ${element.vote_average}
+            </p>
+        </div>
+    </a>`;
+    });
+}
+
 //XỬ LÝ DOM
 window.addEventListener("scroll", function () {
     var header = document.querySelector(".header");
@@ -90,31 +116,6 @@ let submenu = document.querySelector(".header .menu ul li ul ");
 genreLi.addEventListener("click", function () {
     submenu.classList.toggle("active");
 });
-//Ham render danh sach movie
-function renderListmovie(dataResult, boxResult) {
-    dataResult.forEach((element) => {
-        boxResult.innerHTML += ` <a href="detail.html?id=${element.id}&type=${element.original_title ? "movie" : "tv"}" class="cardmovie">
-        <div class="thumb">
-            <img src=" https://image.tmdb.org/t/p/w300${element.poster_path}" alt="" />
-        </div>
-        <h3>${element.original_title ? element.original_title : element.original_name}</h3>
-        <div class="number align-item">
-            <p class="day">${element.release_date ? element.release_date : element.first_air_date}</p>
-            <p class="rate">
-                <i class="fa-solid fa-star"></i>
-                ${element.vote_average}
-            </p>
-        </div>
-    </a>`;
-    });
-}
-
-//Fetch data form URL()
-async function getData(url) {
-    let promise = await fetch(url);
-    let data = await promise.json();
-    return data;
-}
 
 //search
 let search = document.querySelector(".header .search i ");

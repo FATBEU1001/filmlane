@@ -8,9 +8,9 @@ async function renderList(page) {
     const API_LIST = `${API_LINK}discover/${type}?api_key=${API_KEY}&page=${page}`;
     let dataList = await getData(API_LIST);
     let listmovie = document.querySelector(".listmovie .list");
-    renderListmovie(dataList.results, listmovie);
+    renderListmovie(dataList, listmovie);
 }
-renderList();
+renderList(page);
 let show = document.querySelector(".show .show-more ");
 show.addEventListener("click", async function () {
     page += 1;
